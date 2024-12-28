@@ -1,7 +1,12 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron';
-import { join } from 'path';
+import path, { join } from 'path';
+import { userInfo } from 'os';
+import { autoUpdater } from 'electron-updater';
+import log from 'electron-log/main';
 import { electronApp, optimizer, is } from '@electron-toolkit/utils';
 import icon from '../../resources/icon.png?asset';
+
+log.initialize();
 
 function createWindow(): void {
   // Create the browser window.
